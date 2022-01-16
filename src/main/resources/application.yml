@@ -5,9 +5,9 @@ server:
 
 spring:
   datasource:
-    password:
+    password: "비밀번호"
     url: jdbc:postgresql://localhost:5432/registration
-    username:
+    username: root
   jpa:
     hibernate:
       ddl-auto: create-drop
@@ -18,19 +18,40 @@ spring:
     show-sql: true
 
   mail:
-    host: localhost
-    port: 1025
-    username: hello
-    password: hello
-
+    host: smtp.gmail.com
+    port: 587
+    username: "사용자 이메일"
+    password: '사용자 비밀번호'
     properties:
       mail:
         smtp:
-          ssl:
-            trust: "*"
           auth: true
           starttls:
             enable: true
-          connectiontimeout: 5000
-          timeout: 3000
-          writetimeout: 5000
+            required: true
+          timeout: 10000
+#  mail:
+#    host: localhost
+#    port: 1025
+#    username: hello
+#    password: hello
+#
+#    properties:
+#      mail:
+#        smtp:
+#          ssl:
+#            trust: "*"
+#          auth: true
+#          starttls:
+#            enable: true
+#          connectiontimeout: 5000
+#          timeout: 3000
+#          writetimeout: 5000
+
+logging:
+  level:
+    root: info
+    com:
+      java:
+        emailverification: debug
+#  config: classpath:logback.xml
