@@ -7,4 +7,5 @@
 - @Configuration
 - @SequenceGenerator
 - @GeneratedValue
+- @Async
 - Spring Security쪽 개념 정리
